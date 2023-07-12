@@ -2,24 +2,25 @@
 {% block head %}
 <link rel="icon" type="image/x-icon" href="/static/beer-icon.png">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-<title>Brew Finder</title>
+<title>Brew Explorer</title>
 {% endblock %}
 {% block content %}
 <body style="background-color:#FEFBEA!important;color:#B45309!important;">
 <div class="px-4 py-5 mt-5 mb-2 text-center">
     <img class="d-block mx-auto mb-4" src="/static/beer-icon.png" alt="" width="72">
-    <h1 class="display-5 fw-bold text-body-emphasis" style="color:#B45309 !important;">Brew Finder Random</h1>
+    <h1 class="display-5 fw-bold text-body-emphasis" style="color:#B45309 !important;">Brew Explorer</h1>
     <div class="col-lg-6 mx-auto">
-      <p class="lead mb-1">Welcome to BrewFinder! Unleash your taste buds and explore the world of breweries with a single click. Discover unique flavors, immersive locations, and vibrant atmospheres as you embark on an unforgettable journey. Cheers to the exploration of craft beer and the hidden gems that await you!
+      <p class="lead mb-1">Welcome to BrewExplorer! Unleash your taste buds and explore the world of breweries with a single click. Discover unique flavors, immersive locations, and vibrant atmospheres as you embark on an unforgettable journey. Cheers to the exploration of craft beer and the hidden gems that await you!
           <br>
           <br>
           If you're craving a new brewery experience, simply refresh the page to reroll and discover another exciting destination. Let the adventure continue!</p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href="{{ url_for('home') }}"><button type="button" class="btn btn-warning btn-lg px-4 gap-3 mt-5">Discover New!</button></a>
+      </div>
       </div>
     </div>
-  </div>
 <hr>
-<div class="container col-xxl-8 px-1 py-5">
+<div class="container col-xxl-8 px-1 py-2">
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
       <div class="col-10 col-sm-8 col-lg-6">
         <img src="{{ image }}" class="d-block mx-lg-auto img-fluid" alt="Brewery Image" width="500" loading="lazy" style="max-height:600px!important;">
@@ -35,8 +36,8 @@
           <a href="tel:{{ brewery.phone }}"><p class="ts-3">{{ phone }}</p></a>
           {% endif %}
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <a href="{{ brewery.website_url }}" target="_blank"><button type="button" class="btn btn-warning btn-lg px-4 me-md-2">Visit the Website</button></a>
-          <a href="{{ url }}" target="_blank"><button type="button" class="btn btn-outline-warning btn-lg px-4">Google Place</button></a>
+          <a href="{{ brewery.website_url }}" target="_blank"><button type="button" class="btn btn-warning btn-sm px-4 me-md-2">Visit the Website</button></a>
+          <a href="{{ url }}" target="_blank"><button type="button" class="btn btn-outline-warning btn-sm px-4">Google Place</button></a>
         </div>
       </div>
     </div>
